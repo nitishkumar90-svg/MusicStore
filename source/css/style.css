@@ -1,0 +1,192 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #14182A;
+}
+h1,h2,h3,h4,h5,h6,a,p,span {
+    color: white;
+}
+input, button {
+    padding: 10px;
+    width: 80%;
+    border-radius: 4px;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    padding: 10px 10px;
+    background-color: #1B2039;
+}
+
+header .fa-search-custom {
+    position: relative;
+    right: 2em;
+    top: 2px;
+}
+
+header .fa-record-vinyl-custom {
+    color: orangered;
+    position: relative;
+    left: 127px;
+    font-size: 12px;
+}
+
+.container {
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.color-blue {
+    color: #3BC8E7;
+}
+
+.btn {
+    background-color: #3BC8E7;
+    border: 1px solid #3BC8E7;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    color: #3BC8E7;
+}
+
+.hidden {
+    display: none;
+}
+.mobile {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.pad-top-15 {
+    padding-top: 15px;
+}
+
+.pad-top-20 {
+    padding-top: 20px;
+}
+
+.grid {
+    display: grid;
+}
+.grid-cols-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-space {    
+    column-gap: 2em;
+}
+
+.grid-span-2 {
+    grid-column-start: col-start 2
+}
+
+.main-banner {
+    min-height: 90vh;
+    background-color: #14182A;
+}
+
+.main-banner div:nth-child(2) {
+    padding-top: 30vh;
+    width: 100%;
+}
+
+.main-banner div:nth-child(2) h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.main-banner div:nth-child(2) p {
+    margin: 20px 0;
+    color: #777777;
+}
+
+.main-banner div:nth-child(2) .btn {
+    width: 9em;
+    margin: 10px 20px 10px 0;
+    border-radius: 20px;
+}
+
+.recently-played {
+    padding: 40px 0;
+}
+
+.fa-play-circle-custom {
+    font-size: 40px;
+}
+
+
+
+.image-div {
+    position: relative;
+}
+.image-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .1s ease;
+    background-color: #1811119d;
+    height: 325px;
+}
+.section-outing img:hover {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: .1s ease;
+    background-color: rgb(20, 12, 12);
+    opacity: 0.4;
+    cursor: pointer;
+}
+.image-div:hover .image-overlay {
+    opacity: 1;
+}
+.dynamic-content {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: lighter;
+}
