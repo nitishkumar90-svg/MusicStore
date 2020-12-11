@@ -2,7 +2,42 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #14182A;
+}
+
+h1,h2,h3,h4,h5,h6,a,p,span {
+    color: white;
+}
+input, button {
+    padding: 10px;
+    width: 80%;
+    border-radius: 4px;
+}
+
 a {
     text-decoration: none; 
     color: white;   
 }
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
