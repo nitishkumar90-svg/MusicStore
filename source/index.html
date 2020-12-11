@@ -23,13 +23,13 @@
                 <div>
                     <input type="text" placeholder="Search Music Here..">
                     <i class="fas fa-search fa-search-custom"></i>
-                </div>
+                </div>   
                 <div class="text-center pad-top-15">
-                    <span class="color-blue">Trending Song: </span><a href="#">Song name here</a>
+                    <a href="#"><span class="color-blue">Trending Song:</span> Dream Your Moments (Duet)</a>
                 </div>
                 <div class="text-right">
-                    <i class="fas fa-record-vinyl fa-record-vinyl-custom"></i>
-                    <button class="btn">Record Song</button>
+                    <button id="btnRecording" class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i> Record
+                        Song</button>
                 </div>
             </div>
         </div>
@@ -37,13 +37,14 @@
             <input type="text" placeholder="Search Music Here..">
             <i class="fas fa-search fa-search-custom"></i>
             <a class="ham" href="javascript:void(0)"><i class="fas fa-bars"></i></a>
-            <div class="hidden">
-                <div class="grid grid-cols-1">
-                    <div>
-                        <span>Trending Song: </span><a href="#">Song name here</a>
+            <div class="hamContent hidden">
+                <div class="grid grid-cols-1 text-right">
+                    <div class="pad-top-20">
+                        <a href="#"><span class="color-blue">Trending Song:</span> Dream Your Moments (Duet)</a>
                     </div>
-                    <div>
-                        <button>Record Song</button>
+                    <div class="pad-top-20 pad-bot-20 border-top">
+                        <button class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i> Record
+                            Song</button>
                     </div>
                 </div>
             </div>
@@ -70,52 +71,194 @@
         <section class="recently-played">
             <div class="container">
                 <h1 class="color-blue">Recently Added</h1>
-                <div class="pad-top-20 grid grid-cols-4">
+                <div class="pad-top-20 grid grid-cols-4 grid-space">
                     <div class="image-div">
-                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic1.jpg" alt=""></a>
+                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic1.jpg"
+                                alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="#" class="text-center" style="color: white;">
+                                <a href="#" class="text-center color-white">
                                     <i class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a> 
-                            </div>                           
+                                </a>
+                            </div>
+                        </div>
+                        <div class="caption pad-top-10">
+                            <h5>Dream Your Moments (Duet)</h5>
+                            <p class="color-gray">Ava Cornish & Brian Hill</p>
                         </div>
                     </div>
                     <div class="image-div">
-                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic2.jpg" alt=""></a>
+                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic2.jpg"
+                                alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="#" class="text-center" style="color: white;">
+                                <a href="#" class="text-center color-white">
                                     <i class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a> 
-                            </div>                           
+                                </a>
+                            </div>
+                        </div>
+                        <div class="caption pad-top-10">
+                            <h5>Until I Met You</h5>
+                            <p class="color-gray">Ava Cornish & Brian Hill</p>
                         </div>
                     </div>
                     <div class="image-div">
-                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic3.jpg" alt=""></a>
+                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic3.jpg"
+                                alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="#" class="text-center" style="color: white;">
+                                <a href="#" class="text-center color-white">
                                     <i class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a> 
-                            </div>                           
+                                </a>
+                            </div>
+                        </div>
+                        <div class="caption pad-top-10">
+                            <h5>Gimme Some Courage</h5>
+                            <p class="color-gray">Ava Cornish & Brian Hill</p>
                         </div>
                     </div>
                     <div class="image-div">
-                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic4.jpg" alt=""></a>
+                        <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic4.jpg"
+                                alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="#" class="text-center" style="color: white;">
+                                <a href="#" class="text-center color-white">
                                     <i class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a> 
-                            </div>                           
+                                </a>
+                            </div>
+                        </div>
+                        <div class="caption pad-top-10">
+                            <h5>Dark Alley Acoustic</h5>
+                            <p class="color-gray">Ava Cornish & Brian Hill</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <section class="weekly-top-10">
+            <div class="container">
+                <h1 class="color-blue">Weekly Top 9</h1>
+                <div class="pad-top-20 grid grid-cols-3">
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">01</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly1.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">02</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly2.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">03</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly3.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">04</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly4.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">05</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly5.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">06</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly6.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">07</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly7.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">08</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly8.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                    <div class="flex">
+                        <span class="font-40 pad-top-10">09</span>
+                        <img height="50" src="/MusicStore/source/resources/images/weekly9.jpg" alt="">
+                        <span class="pad-top-20">Until I Met You</span>
+                        <span class="pad-top-20">5:10</span>
+                        <a class="pad-top-15" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-advertisement">
+            <div class="smallContainer">
+                <div class="text-center">
+                    <img src="/MusicStore/source/resources/images/adv1.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="play-song-section" class="static-play-section">
+            <div class="container">
+                <div class="grid grid-cols-7">
+                    <div class="flex text-center">
+                        <img class="pad-top-10" height="50" src="/MusicStore/source/resources/images/weekly9.jpg"
+                            alt="">
+                        <span class="pad-top-26 hide-extra-content">Until I Met You</span>
+                    </div>
+                    <div class="flex grid-span-2 background-black">
+                        <a class="pad-top-23" href=""><i class="fas fa-fast-backward color-white font-20"></i></a>
+                        <a class="pad-top-23" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                        <a class="pad-top-23" href=""><i class="fas fa-fast-forward color-white font-20"></i></a>
+                        <span class="pad-top-26 pad-left-20 hideOnMobile">Track</span>
+                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0" max="5" name="" id="">
+                        <span class="pad-top-26 pad-left-20 hideOnMobile">Volume</span>
+                        <input class="width-20 margin-15 custom-range hideOnMobile" type="range" id="vol" value="0" name="vol" min="0" max="50">
+                        <a class="hideOnMobile" href="javascript:void(0)"><img class="dj" src="/MusicStore/source/resources/images/dj.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="recording-section" class="static-play-section hidden">
+            <div class="container">
+                <div class="grid grid-cols-7">
+                    <div class="flex text-center">
+                        <span class="pad-top-26 hide-extra-content color-red">Recording</span>
+                    </div>
+                    <div class="flex grid-span-recording-2 background-black">
+                        <a class="pad-top-23" href=""><i class="fas fa-play-circle color-white font-20"></i></a>
+                        <a class="pad-top-23" href=""><i class="far fa-stop-circle color-white font-20"></i></a>
+                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0" max="5" name="" id="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mix-section" class="dj-mix-section hidden hideOnMobile">
+            <div class="container">
+               <div class="grid grid-cols-1">
+                    <a href=""><i class="fas fa-drum color-white"></i></a>
+                    <a href=""><i class="fas fa-guitar color-white"></i></a>
+               </div>
+            </div>
+        </section>
     </main>
-    <footer></footer>
+    <footer>
+        <p class="text-center">&copy; 2020. <span class="color-blue">Music Store - Nitish Kumar</span></p>
+    </footer>
     <script src="/MusicStore/source/js/main.js"></script>
 </body>
 
