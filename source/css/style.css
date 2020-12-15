@@ -20,13 +20,13 @@
 .btn {
 	background-color: var(--primary-color);
 	border: 1px solid var(--primary-color);
-	color: var(--secondary-color);;
+	color: var(--secondary-color);
 	cursor: pointer;
 	border-radius: 4px;
 }
 
 .btn:hover {
-	background-color: var(--secondary-color);;
+	background-color: var(--secondary-color);
 	border: 1px solid #cccccc;
 	color: var(--primary-color);
 	;
@@ -154,27 +154,6 @@
 
 .pad-5 {
 	padding: 5px;
-}
-
-.gradient-text {
-	color: transparent;
-	background-image: linear-gradient(10deg, var(--primary-color)
-	, var(--secondary-color);, var(--primary-color)
-	, var(--secondary-color);, var(--primary-color)
-	, var(--secondary-color););
-	background-size: 200%;
-	background-position: left;
-	-webkit-background-clip: text;
-	animation: bgshift 10s linear infinite;
-}
-
-.gradient-text-white {
-	color: transparent;
-	background-image: linear-gradient(10deg, var(--secondary-color);, #cccccc, #999999, #4e4e4e, #cccccc, #cccccc);
-	background-size: 200%;
-	background-position: left;
-	-webkit-background-clip: text;
-	animation: bgshift 10s linear infinite;
 }
 
 .height-50 {
@@ -476,6 +455,27 @@ footer {
 /*---- END FLIP IMAGE CSS ----*/
 
 /*---- GRADIENT CSS ----*/
+
+.gradient-text {
+	color: transparent;
+	background-image: linear-gradient(10deg, #3BC8E7
+	, #ffffff, #3BC8E7
+	, #ffffff, #3BC8E7
+	, #ffffff);
+	background-size: 200%;
+	background-position: left;
+	-webkit-background-clip: text;
+	animation: bgshift 10s linear infinite;
+}
+
+.gradient-text-white {
+	color: transparent;
+	background-image: linear-gradient(10deg, #ffffff, #cccccc, #999999, #4e4e4e, #cccccc, #cccccc);
+	background-size: 200%;
+	background-position: left;
+	-webkit-background-clip: text;
+	animation: bgshift 10s linear infinite;
+}
 
 @keyframes bgshift {
 	0%,
