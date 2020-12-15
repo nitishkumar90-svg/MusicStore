@@ -17,34 +17,57 @@
 </head>
 
 <body>
+    <!-- <div class="modal">
+        <div><img src="https://media.giphy.com/media/Ti1MfdDymhUrQ9eV4X/giphy.gif" alt=""></div>
+    </div> -->
     <header>
         <div class="web">
             <div class="grid grid-cols-3 grid-space">
-                <div>
-                    <input type="text" placeholder="Search Music Here..">
-                    <i class="fas fa-search fa-search-custom"></i>
-                </div>   
+                <div class="pad-top-15 color-white col-span-2">
+                    <b>Play Instruments: </b>
+                    <a href="/MusicStore/source/html/play-drum.html"><i class="fas fa-drum pad-left-20 color-blue"></i></a>
+                    <a href="/MusicStore/source/html/play-piano.html"><i class="fas fa-guitar color-blue pad-left-20"></i></a>
+                </div>
                 <div class="text-center pad-top-15">
                     <a href="#"><span class="color-blue">Trending Song:</span> Dream Your Moments (Duet)</a>
                 </div>
                 <div class="text-right">
-                    <button id="btnRecording" class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i> Record
-                        Song</button>
+                    <button id="btnRecording" class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i> Record Song</button>
                 </div>
             </div>
         </div>
-        <div class="mobile">
-            <input type="text" placeholder="Search Music Here..">
-            <i class="fas fa-search fa-search-custom"></i>
-            <a class="ham" href="javascript:void(0)"><i class="fas fa-bars"></i></a>
+        <div class="mobile mobile-nav">
+            <div id="play-song-mobile-nav" class="play-song-mobile-nav">
+                <span class="pad-5 hide-extra-content">Until I Met You</span>&nbsp;&nbsp;
+                <a class="pad-5" href=""><i class="fas fa-fast-backward color-white font-20"></i></a>
+                <a class="pad-5" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                <a class="pad-5" href=""><i class="fas fa-fast-forward color-white font-20"></i></a>
+                <a class="ham" href="javascript:void(0)"><i class="fas fa-bars font-20"></i></a>
+            </div>
+            <div id="record-song-mobile-nav" class="record-song-mobile-nav hidden">
+                <span class="pad-5 hide-extra-content color-red">Recording</span>&nbsp;&nbsp;
+                <a class="pad-5" href=""><i class="far fa-play-circle color-white font-20"></i></a>
+                <a class="pad-5" href=""><i class="far fa-stop-circle color-white font-20"></i></a>
+                <a class="ham" href="javascript:void(0)"><i class="fas fa-bars font-20"></i></a>
+            </div>
             <div class="hamContent hidden">
                 <div class="grid grid-cols-1 text-right">
-                    <div class="pad-top-20">
+                    <div class="pad-top-15 color-white">
+                        <b>Play Instruments: </b>
+                        <a href="/MusicStore/source/html/play-drum.html"><i class="fas fa-drum pad-left-20 color-blue"></i></a>
+                        <a href="/MusicStore/source/html/play-piano.html"><i class="fas fa-guitar pad-left-20 color-blue"></i></a>
+                    </div>
+                    <div class="border-color-blue"></div>
+                    <div>
                         <a href="#"><span class="color-blue">Trending Song:</span> Dream Your Moments (Duet)</a>
                     </div>
-                    <div class="pad-top-20 pad-bot-20 border-top">
-                        <button class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i> Record
-                            Song</button>
+                    <div class="border-color-blue"></div>
+                    <div class="border-top">
+                        <a href="">Recently Added</a>
+                    </div>
+                    <div class="border-color-blue"></div>
+                    <div class="pad-bot-20 ">
+                        <a href="">Weekly Top 9</a>
                     </div>
                 </div>
             </div>
@@ -54,11 +77,19 @@
         <section class="main-banner">
             <div class="container">
                 <div class="grid grid-cols-2 grid-span-2">
-                    <div class="imgDiv text-right">
-                        <img src="/MusicStore/source/resources/images/main-banner.png" alt="">
+                    <div class="imgDiv flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                <img src="/MusicStore/source/resources/images/main-banner-blue.png" alt="">
+                            </div>
+                            <div class="back">
+                                <img src="/MusicStore/source/resources/images/main-banner3.png" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <h1>This Month's</h1>
+                    
+                    <div class="content-div">
+                        <h1 class="gradient-text-white">This Month's</h1>
                         <h1 class="color-blue">Record Breaking Albums !</h1>
                         <p>Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley, One More Of A Stranger,
                             Endless Things, The Heartbeat Stops, Walking Promises, Desired Games and many more...</p>
@@ -70,7 +101,7 @@
         </section>
         <section class="recently-played">
             <div class="container">
-                <h1 class="color-blue">Recently Added</h1>
+                <h1 class="color-blue gradient-text">Recently Added</h1>
                 <div class="pad-top-20 grid grid-cols-4 grid-space">
                     <div class="image-div">
                         <a href="javascript:void(0)"><img src="/MusicStore/source/resources/images/recentmusic1.jpg"
@@ -137,7 +168,7 @@
         </section>
         <section class="weekly-top-10">
             <div class="container">
-                <h1 class="color-blue">Weekly Top 9</h1>
+                <h1 class="color-blue gradient-text">Weekly Top 9</h1>
                 <div class="pad-top-20 grid grid-cols-3">
                     <div class="flex">
                         <span class="font-40 pad-top-10">01</span>
@@ -225,10 +256,11 @@
                         <a class="pad-top-23" href=""><i class="far fa-play-circle color-white font-20"></i></a>
                         <a class="pad-top-23" href=""><i class="fas fa-fast-forward color-white font-20"></i></a>
                         <span class="pad-top-26 pad-left-20 hideOnMobile">Track</span>
-                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0" max="5" name="" id="">
+                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0"
+                            max="5" name="" id="">
                         <span class="pad-top-26 pad-left-20 hideOnMobile">Volume</span>
-                        <input class="width-20 margin-15 custom-range hideOnMobile" type="range" id="vol" value="0" name="vol" min="0" max="50">
-                        <a class="hideOnMobile" href="javascript:void(0)"><img class="dj" src="/MusicStore/source/resources/images/dj.svg" alt=""></a>
+                        <input class="width-20 margin-15 custom-range hideOnMobile" type="range" id="vol" value="0"
+                            name="vol" min="0" max="50">
                     </div>
                 </div>
             </div>
@@ -242,17 +274,10 @@
                     <div class="flex grid-span-recording-2 background-black">
                         <a class="pad-top-23" href=""><i class="fas fa-play-circle color-white font-20"></i></a>
                         <a class="pad-top-23" href=""><i class="far fa-stop-circle color-white font-20"></i></a>
-                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0" max="5" name="" id="">
+                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0"
+                            max="5" name="" id="">
                     </div>
                 </div>
-            </div>
-        </section>
-        <section id="mix-section" class="dj-mix-section hidden hideOnMobile">
-            <div class="container">
-               <div class="grid grid-cols-1">
-                    <a href=""><i class="fas fa-drum color-white"></i></a>
-                    <a href=""><i class="fas fa-guitar color-white"></i></a>
-               </div>
             </div>
         </section>
     </main>
