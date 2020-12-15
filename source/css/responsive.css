@@ -22,22 +22,22 @@
 	header .grid-cols-4,
 	header .grid-cols-3,
 	header .grid-cols-2 {
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(1, var(--grid-fraction));
 	}
 	.main-banner .grid-cols-4,
 	.main-banner .grid-cols-3,
 	.main-banner .grid-cols-2 {
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(1, var(--grid-fraction));
 	}
 	.recently-played .grid-cols-4,
 	.recently-played .grid-cols-3,
 	.recently-played .grid-cols-2 {
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(1, var(--grid-fraction));
 	}
 	.weekly-top-10 .grid-cols-4,
 	.weekly-top-10 .grid-cols-3,
 	.weekly-top-10 .grid-cols-2 {
-		grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(1, var(--grid-fraction));
 	}
 	.main-banner .imgDiv {
 		text-align: left;
@@ -115,7 +115,7 @@
 @media (min-width: 768px) and (max-width: 991.98px) {
 	.grid-cols-4,
 	.weekly-top-10 .grid-cols-3 {
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, var(--grid-fraction));
 	}
 	.flex {
 		column-gap: 20px;
