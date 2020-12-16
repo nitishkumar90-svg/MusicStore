@@ -17,6 +17,7 @@ let hamAnchor = document.querySelector(".ham"),
     seeking = false,
     seekto,
     audioPlayBackRate = 1.0,
+    isFirstSong = true,
     audio = new Audio()
 
 
@@ -111,7 +112,13 @@ let searchSong = (songId) => {
 
 
 let playPause = () => {
+
     if (audio.paused) {
+        if (isFirstSong)
+        {
+            startVisualization(audio)
+            isFirstSong = false
+        }
         audio.play()
         playbtn.innerHTML = '<i class="far fa-pause-circle color-white font-20"></i>'
     } else {
