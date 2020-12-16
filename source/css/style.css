@@ -29,7 +29,6 @@
 	background-color: var(--secondary-color);
 	border: 1px solid #cccccc;
 	color: var(--primary-color);
-	;
 }
 
 .mobile,
@@ -225,8 +224,9 @@ header .hamContent {
 }
 
 .main-banner .content-div .btn {
-	width: 9em;
-	margin: 10px 20px 10px 0;
+	width: auto;
+    margin: 10px 20px 10px 0;
+    padding: 10px 15px;
 	border-radius: 20px;
 }
 
@@ -311,6 +311,10 @@ header .hamContent {
 
 .weekly-top-10 .flex:first-child {
 	padding-left: 10px;
+}
+
+.fixed-width-150 {
+	width: 150px;
 }
 
 /*---- END WEEKLY TOP 9 SECTION ----*/
@@ -531,6 +535,32 @@ footer {
 	padding-bottom: 140px;
 }
 
+.canvas {
+    width: auto;
+    height: auto;
+    margin: 20vh auto 5vh auto;
+}
+
+.canvas-small {
+	width: 10px;
+	height: 10px;
+	margin: 10px auto;
+}
+
+.bar-wrapper {
+    height: auto;
+    position: relative;
+}
+.bar {
+    position: relative;
+    bottom: 0;
+    width: 5px;
+    display: inline-block;
+    border: 1px solid red;
+    height: 5px;
+    border-bottom: 3px solid #fff;
+}
+
 /*---- END PLAY DRUM/ KEYBOARD SECTION ----*/
 
 
@@ -547,6 +577,7 @@ footer {
 	align-items: center;
 	justify-content: center;
 	animation: fade 3s linear 2s forwards 1;
+	z-index: 5;
 }
 
 .hide {
