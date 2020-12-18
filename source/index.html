@@ -24,12 +24,12 @@
         <div class="web">
             <div class="grid grid-cols-3 grid-space">
                 <div>
-                    <input type="text" placeholder="Search Music Here..">
+                    <input id="txtSearch" type="text" placeholder="Search Music Here..">
                     <i class="fas fa-search fa-search-custom"></i>
                 </div>
+                <div id="static-search-div"></div>
                 <div class="text-center pad-top-15">
-                    <a id="tenderness" href="javascript:void(0)" class="play-music-button "><span
-                            class="color-blue">Trending Song:</span> Dream Your Moments (Duet)</a>
+                    <span class="color-blue">Trending Song: </span><button id="show-trending-song" class="btn-without-bg play-music-button" value="tenderness"> Tenderness</button>
                 </div>
                 <div class="text-right">
                     <button id="btnRecording" class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i>
@@ -39,30 +39,32 @@
         </div>
         <div class="mobile mobile-nav">
             <div id="play-song-mobile-nav" class="play-song-mobile-nav">
-                <span id="song-name-small-bar" class="pad-5 hide-extra-content">Until I Met You</span>
-                <a class="pad-5" href="javascript:void(0)"><i class="fas fa-fast-backward color-white font-20"></i></a>
-                <a id="playpausebtn-small" class="pad-5" href="javascript:void(0)"><i
-                        class="far fa-play-circle color-white font-20"></i></a>
-                <a class="pad-5" href="javascript:void(0)"><i class="fas fa-fast-forward color-white font-20"></i></a>
+                <span id="song-name-small-bar" class="pad-small-2 pad-5 hide-extra-content">Until I Met You</span>
+                <button class="pad-small-2 pad-5 btn-without-bg"><i id="rewindTrack" class="fas fa-backward color-white font-20"></i></button>
+                <button id="playpausebtn-small" class="pad-small-2 btn-without-bg pad-5"><i
+                        class="far fa-play-circle color-white font-20"></i></button>
+                <button class="pad-small-2 pad-5 btn-without-bg"><i id="forwardTrack" class="fas fa-forward color-white font-20"></i></button>
+                <span id="showCurrentSongTimerSmall" class="pad-top-20 hide-extra-content"></span>
                 <div class="ham">
-                    <a href="javascript:void(0)"><i class="fas fa-search font-20"></i></a>
-                    <a class="mobile-pad-left-20 pad-left-20" href="javascript:void(0)"><i class="fas fa-bars font-20"></i></a>
+                    <button class="btn-without-bg"><i class="fas fa-search font-20"></i></button>
+                    <button class="mobile-pad-left-20 btn-without-bg pad-left-20"><i
+                            class="fas fa-bars font-20"></i></button>
                 </div>
             </div>
             <div id="record-song-mobile-nav" class="record-song-mobile-nav hidden">
                 <span class="pad-5 hide-extra-content color-red">Recording</span>
-                <a class="pad-5" href="javascript:void(0)"><i class="far fa-play-circle color-white font-20"></i></a>
-                <a class="pad-5" href="javascript:void(0)"><i class="far fa-stop-circle color-white font-20"></i></a>
+                <button class="pad-5 btn-without-bg"><i class="far fa-play-circle color-white font-20"></i></button>
+                <button class="pad-5 btn-without-bg"><i class="far fa-stop-circle color-white font-20"></i></button>
                 <div class="ham">
-                    <a href="javascript:void(0)"><i class="fas fa-search font-20"></i></a>
-                    <a class="mobile-pad-left-20 pad-left-20" href="javascript:void(0)"><i class="fas fa-bars font-20"></i></a>
+                    <button class="btn-without-bg"><i class="fas fa-search font-20"></i></button>
+                    <button class="mobile-pad-left-20 pad-left-20 btn-without-bg"><i
+                            class="fas fa-bars font-20"></i></button>
                 </div>
             </div>
             <div class="hamContent hidden">
                 <div class="grid grid-cols-1 text-right">
                     <div class="pad-top-23 ">
-                        <a href="javascript:void(0)"><span class="color-blue">Trending Song:</span> Dream Your Moments
-                            (Duet)</a>
+                        <span class="color-blue">Trending Song:</span> <button id="show-trending-song" class="btn-without-bg play-music-button" value="tenderness">Tenderness</button>
                     </div>
                     <div class="border-color-blue"></div>
                     <div class="border-top">
@@ -100,7 +102,7 @@
                         <h1 class="color-blue">Record Breaking Albums !</h1>
                         <p>Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley, One More Of A Stranger,
                             Endless Things, The Heartbeat Stops, Walking Promises, Desired Games and many more...</p>
-                        <button class="btn">Listen Now</button>
+                        <button id="play-trending-song" value="tenderness" class="play-music-button btn">Listen Now</button>
                     </div>
                 </div>
             </div>
@@ -114,9 +116,9 @@
                                 alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="javascript:void(0)" class="play-music-button text-center color-white">
-                                    <i id="energy" class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a>
+                                <button class="play-music-button btn-without-bg text-center color-white">
+                                    <i title="energy" class="far fa-play-circle fa-play-circle-custom"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="caption pad-top-10">
@@ -129,9 +131,9 @@
                                 alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="javascript:void(0)" class="play-music-button text-center color-white">
-                                    <i id="betterdays" class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a>
+                                <button class="play-music-button btn-without-bg text-center color-white">
+                                    <i title="betterdays" class="far fa-play-circle fa-play-circle-custom"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="caption pad-top-10">
@@ -144,9 +146,9 @@
                                 alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="javascript:void(0)" class="play-music-button text-center color-white">
-                                    <i id="tenderness" class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a>
+                                <button class="play-music-button btn-without-bg text-center color-white">
+                                    <i title="tenderness" class="far fa-play-circle fa-play-circle-custom"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="caption pad-top-10">
@@ -159,9 +161,9 @@
                                 alt=""></a>
                         <div class="image-overlay">
                             <div class="dynamic-content">
-                                <a href="javascript:void(0)" class="play-music-button text-center color-white">
-                                    <i id="slowmotion" class="far fa-play-circle fa-play-circle-custom"></i>
-                                </a>
+                                <button class="play-music-button btn-without-bg text-center color-white">
+                                    <i title="slowmotion" class="far fa-play-circle fa-play-circle-custom"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="caption pad-top-10">
@@ -175,79 +177,7 @@
         <section id="weekly-top-10-section" class="weekly-top-10">
             <div class="container">
                 <h1 class="color-blue gradient-text">Weekly Top 9</h1>
-                <div class="pad-top-20 grid grid-cols-3">
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">01</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly1.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Better Days</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="betterdays"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">02</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly2.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Dub Ste</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="dubstep"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">03</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly3.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Energy</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="energy"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">04</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly4.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Epic</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="epic"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">05</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly5.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Once Again</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="onceagain"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">06</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly6.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Slow Motion</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="slowmotion"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">07</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly7.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Sunny</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="sunny"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">08</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly8.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Tenderness</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="tenderness"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
-                    <div class="flex">
-                        <span class="font-40 pad-top-10">09</span>
-                        <img height="50" src="/MusicStore/source/resources/images/weekly9.jpg" alt="">
-                        <span class="fixed-width-150 pad-top-20">Sunny</span>
-                        <span class="pad-top-20">5:10</span>
-                        <a class="play-music-button pad-top-15" href="javascript:void(0)"><i id="sunny-ext"
-                                class="far fa-play-circle color-white font-20"></i></a>
-                    </div>
+                <div id="weekly-top-9-content" class="pad-top-20 grid grid-cols-3">
                 </div>
             </div>
         </section>
@@ -414,21 +344,22 @@
             <div class="container">
                 <div class="grid grid-cols-7">
                     <div class="flex text-center">
-                        <img id="current-song-image" class="pad-top-10" height="50" src="/MusicStore/source/resources/images/weekly9.jpg"
-                            alt="">
+                        <img id="current-song-image" class="pad-top-10" height="50"
+                            src="/MusicStore/source/resources/images/weekly9.jpg" alt="">
                         <span id="song-name-bar" class="pad-top-26 hide-extra-content">Until I Met You</span>
+                        <span id="showCurrentSongTimer" class="pad-top-26 hide-extra-content"></span>
                         <canvas class="pad-top-10 canvas-small"></canvas>
                     </div>
                     <div class="flex grid-span-2 background-black">
-                        <a class="pad-top-23" href="javascript:void(0)"><i
-                                class="fas fa-fast-backward color-white font-20"></i></a>
-                        <a id="playpausebtn" class="pad-top-23" href="javascript:void(0)"><i
-                                class="far fa-play-circle color-white font-20"></i></a>
-                        <a class="pad-top-23" href="javascript:void(0)"><i
-                                class="fas fa-fast-forward color-white font-20"></i></a>
+                        <button class="pad-top-15 btn-without-bg"><i id="rewindTrack" 
+                            title="Rewind For 10 Seconds" class="fas fa-backward color-white font-20"></i></button>
+                        <button id="playpausebtn" class="pad-top-15 btn-without-bg"><i
+                                class="far fa-play-circle color-white font-20"></i></button>
+                        <button class="pad-top-15 btn-without-bg"><i id="forwardTrack"
+                            title="Forward For 10 Seconds" class="fas fa-forward color-white font-20"></i></button>
                         <span class="pad-top-26 pad-left-20 hideOnMobile">Track</span>
                         <input id="seekslider" class="margin-15 custom-range hideOnMobile" width="40" type="range"
-                            min="0" max="60" value="0" step="1">
+                            min="0" max="100" value="0">
                         <span class="pad-top-26 pad-left-20 hideOnMobile">Volume</span>
                         <input id="volumeslider" class="width-20 margin-15 custom-range hideOnMobile" type="range"
                             id="vol" value="50" name="vol" min="0" max="50">
@@ -443,10 +374,10 @@
                         <span class="pad-top-26 hide-extra-content color-red">Recording</span>
                     </div>
                     <div class="flex grid-span-recording-2 background-black">
-                        <a class="pad-top-23" href="javascript:void(0)"><i
-                                class="fas fa-play-circle color-white font-20"></i></a>
-                        <a class="pad-top-23" href="javascript:void(0)"><i
-                                class="far fa-stop-circle color-white font-20"></i></a>
+                        <button class="pad-top-23 btn-without-bg"><i
+                                class="fas fa-play-circle color-white font-20"></i></button>
+                        <button class="pad-top-23 btn-without-bg"><i
+                                class="far fa-stop-circle color-white font-20"></i></button>
                         <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0"
                             max="5" name="" id="">
                     </div>
