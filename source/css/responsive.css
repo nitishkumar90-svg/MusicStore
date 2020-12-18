@@ -102,7 +102,9 @@
 	.mobile-pad-left-20 {
 		padding-left: 10px;
 	}
-	
+	.pad-small-2 {
+		padding: 2px
+	}
 
 }
 
