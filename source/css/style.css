@@ -31,6 +31,22 @@
 	color: var(--primary-color);
 }
 
+.btn-without-bg {
+	width: auto;
+    background-color: transparent;
+    border: 0;
+    color: white;
+    padding: 0;
+	border-radius: 0;
+	font-family: var(--font-family);
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.btn-without-bg i {
+	cursor: pointer;
+}
+
 .mobile,
 .hidden {
 	display: none;
@@ -66,6 +82,10 @@
 
 .pad-top-20 {
 	padding-top: 20px;
+}
+
+.pad-top-3 {
+	padding-top: 3px;
 }
 
 .pad-bot-20 {
@@ -116,11 +136,6 @@
 	color: red;
 }
 
-.main-banner {
-	min-height: 90vh;
-	background-color: #14182A;
-}
-
 .font-40 {
 	font-size: 40px;
 }
@@ -130,7 +145,7 @@
 }
 
 .color-white {
-	color: var(--seconday-color);
+	color: var(--secondary-color);
 }
 
 .flex {
@@ -202,11 +217,28 @@ header .hamContent {
 	width: 100%;
 }
 
+header #static-search-div {
+	position: absolute;
+    height: 250px;
+    background-color: var(--secondary-color);
+    width: auto;
+    z-index: 3;
+    top: 52px;
+    left: 10px;
+    border: 2px solid #000;
+    overflow-y: auto;
+}
+
+
 
 /* ---- END HEADER ----*/
 
 
 /*---- HERO SECTION ----*/
+
+.main-banner {
+	min-height: 90vh;
+}
 
 .main-banner .content-div {
 	padding-top: 30vh;
@@ -262,7 +294,7 @@ header .hamContent {
 	opacity: 0;
 	transition: .1s ease;
 	background-color: #1811119d;
-	height: 325px;
+	height: 305px;
 }
 
 .section-outing img:hover {
@@ -314,7 +346,7 @@ header .hamContent {
 }
 
 .fixed-width-150 {
-	width: 150px;
+	width: 100px;
 }
 
 /*---- END WEEKLY TOP 9 SECTION ----*/
@@ -577,7 +609,7 @@ footer {
 	align-items: center;
 	justify-content: center;
 	animation: fade 3s linear 2s forwards 1;
-	z-index: 5;
+	z-index: 4;
 }
 
 .hide {
