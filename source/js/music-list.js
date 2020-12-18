@@ -34,71 +34,71 @@ let availableSongsList = [
         "name": "Better Days",
         "url": "/MusicStore/source/resources/audio/music/betterdays.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly1.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "dubstep",
         "name": "Dub Step",
         "url": "/MusicStore/source/resources/audio/music/dubstep.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly2.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "energy",
         "name": "Energy",
         "url": "/MusicStore/source/resources/audio/music/energy.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly3.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "epic",
         "name": "Epic",
         "url": "/MusicStore/source/resources/audio/music/epic.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly4.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "onceagain",
         "name": "Once Again",
         "url": "/MusicStore/source/resources/audio/music/onceagain.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly5.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "slowmotion",
         "name": "Slow Motion",
         "url": "/MusicStore/source/resources/audio/music/slowmotion.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly6.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "sunny",
         "name": "Sunny",
         "url": "/MusicStore/source/resources/audio/music/sunny.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly7.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "tenderness",
         "name": "Tenderness",
         "url": "/MusicStore/source/resources/audio/music/tenderness.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly8.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     },
     {
         "id": "sunny-ext",
         "name": "Sunny",
         "url": "/MusicStore/source/resources/audio/music/sunny.mp3",
         "imageUrl": "/MusicStore/source/resources/images/weekly9.jpg",
-        "min": 0,
-        "max": 300
+        "min": "0",
+        "max": "301" // in seconds
     }
 ]
