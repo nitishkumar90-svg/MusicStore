@@ -16,14 +16,29 @@ let drumBeatsList = [
         "url": "/MusicStore/source/resources/audio/drum/snare.wav"
     },
     {
-        "id": "tom",
+        "id": "tom1",
         "name": "tom.wav",
         "url": "/MusicStore/source/resources/audio/drum/tom1.wav"
     },
     {
-        "id": "highhat",
+        "id": "tom2",
+        "name": "tom.wav",
+        "url": "/MusicStore/source/resources/audio/drum/tom2.wav"
+    },
+    {
+        "id": "tom3",
+        "name": "tom.wav",
+        "url": "/MusicStore/source/resources/audio/drum/tom3.wav"
+    },
+    {
+        "id": "highhatOpen",
         "name": "highhat.wav",
         "url": "/MusicStore/source/resources/audio/drum/highhat-open.wav"
+    },
+    {
+        "id": "highhatClosed",
+        "name": "highhat.wav",
+        "url": "/MusicStore/source/resources/audio/drum/highhat-closed.wav"
     }
 ]
 
