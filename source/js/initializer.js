@@ -1,5 +1,5 @@
 //defaults
-window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
+
 
 //#region Find Element Method
 
@@ -68,7 +68,7 @@ let playTrendingSongButton = FindElementBySelector('play-trending-song', true, f
 //#endregion
 
 //#region Initialize Global Variables
-let songStartInterval;
+let Song_StartInterval;
 let recordingTime = 0
 let audio = new Audio()
 let mediaRecorder
@@ -98,8 +98,8 @@ let ResetRecorderSettings = (forceReset) => {
     stopBtnSmall.classList.remove('fa-pause-circle')
     try {
         if (forceReset) {
+            pauseAudio()
             mediaRecorder.stop()
-            audio.pause()
         }
     }
     catch (ex) { }
@@ -137,6 +137,7 @@ let ToggleRecordingSectionBar = (fromPlaySong) => {
 let StartLiveVisualizationForUI = (audio) => {
     try {
         if (audio !== undefined) {
+            window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
             let audioContext = new AudioContext()
             let analyser = audioContext.createAnalyser()
             let audioSrc = audioContext.createMediaElementSource(audio)

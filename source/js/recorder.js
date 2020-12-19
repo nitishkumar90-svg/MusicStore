@@ -1,3 +1,5 @@
+let recordAudio = new Audio()
+
 //#region Load Microphone
 let loadMicrophone = async function () {
     let audioChunks = [] // An array to store all of the recording bits
@@ -20,7 +22,7 @@ let loadMicrophone = async function () {
         startBtnSmall.classList.remove('color-white')
         startBtnSmall.classList.add('color-red')
         audioChunks = []
-        songStartInterval = setInterval(() => {
+        Song_StartInterval = setInterval(() => {
             recordingTime += 1
             let calculatedTime = ConvertSecondsToMinutesAndSecondString(Math.floor(recordingTime))
             showCurrentRecordingTimer.innerText = showCurrentRecordingTimerSmall.innerText = calculatedTime
@@ -33,7 +35,7 @@ let loadMicrophone = async function () {
     // When the stream STOPS recording
     mediaRecorder.addEventListener("stop", function (event) {
         recordingSlider.max = recordingTime
-        clearInterval(songStartInterval)
+        clearInterval(Song_StartInterval)
         playBtn.parentElement.classList.toggle('visibility-hidden')
         playBtnSmall.parentElement.classList.toggle('visibility-hidden')
         startBtn.classList.add('color-white')
@@ -42,18 +44,18 @@ let loadMicrophone = async function () {
         startBtnSmall.classList.remove('color-red')
         const audioBlob = new Blob(audioChunks)  // Compile the recording bits
         const audioUrl = URL.createObjectURL(audioBlob)  // Turn into a file
-        let recordAudio = new Audio()
-        audio.src = audioUrl
-        audio.loop = true
-        audio.addEventListener('timeupdate', (event) => {
+
+        recordAudio.src = audioUrl
+        recordAudio.loop = true
+        recordAudio.addEventListener('timeupdate', (event) => {
             const { currentTime } = event.target
             recordingSlider.value = currentTime
             let calculatedTime = ConvertSecondsToMinutesAndSecondString(Math.floor(currentTime))
             showCurrentRecordingTimer.innerText = showCurrentRecordingTimerSmall.innerText = calculatedTime
         })
-        recordingSlider.onclick = () => audio.currentTime = seekSlider.value
+        recordingSlider.onclick = () => recordAudio.currentTime = seekSlider.value
         recordingTime = 0
-        audio.pause()
+        recordAudio.pause()
         recordingNow(false)  // Inform the UI that we're not recording
     })
 
@@ -77,25 +79,31 @@ let recordingNow = function (isRecording) {
 }
 
 let setRecorderVolume = (event) => {
-    if (audio === undefined)
+    if (recordAudio === undefined)
         return
-    audio.volume = volumeRecordingSlider.value / 100
+    recordAudio.volume = volumeRecordingSlider.value / 100
 }
 
 let playSong = () => {
-    if (audio === undefined)
+    if (recordAudio === undefined)
         return
     stopBtn.classList.remove('fa-stop-circle')
     stopBtn.classList.add('fa-pause-circle')
     stopBtnSmall.classList.remove('fa-stop-circle')
     stopBtnSmall.classList.add('fa-pause-circle')
-    audio.play()
-    StartLiveVisualizationForUI(audio)
+    recordAudio.play()
+    StartLiveVisualizationForUI(recordAudio)
 }
 
 let toggleMainRecordingSection = () => {
     toggleHam()
     ToggleRecordingSectionBar()
+}
+
+let pauseAudio = () => {
+    if (recordAudio === undefined)
+        return
+    recordAudio.pause()
 }
 
 //#endregion
@@ -123,8 +131,8 @@ startBtnSmall.addEventListener(`click`, function (event) {
 
 // When the stop button is clicked, stop recording
 stopBtn.addEventListener(`click`, function (event) {
-    if (audio !== undefined)
-        audio.pause()
+    if (recordAudio !== undefined)
+        recordAudio.pause()
     if (mediaRecorder === undefined)
         return
     try {
@@ -135,8 +143,8 @@ stopBtn.addEventListener(`click`, function (event) {
 
 // When the stop button is clicked, stop recording
 stopBtnSmall.addEventListener(`click`, function (event) {
-    if (audio !== undefined)
-        audio.pause()
+    if (recordAudio !== undefined)
+        recordAudio.pause()
     if (mediaRecorder === undefined)
         return
     try {
