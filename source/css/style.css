@@ -189,6 +189,10 @@
 	opacity: 0.3;
 }
 
+.visibility-hidden {
+	visibility: hidden;
+}
+
 
 /*---- END GENERAL CSS ----*/
 
