@@ -29,7 +29,8 @@
                 </div>
                 <div id="static-search-div"></div>
                 <div class="text-center pad-top-15">
-                    <span class="color-blue">Trending Song: </span><button id="show-trending-song" class="btn-without-bg play-music-button" value="tenderness"> Tenderness</button>
+                    <span class="color-blue">Trending Song: </span><button id="show-trending-song"
+                        class="btn-without-bg play-music-button" value="tenderness"> Tenderness</button>
                 </div>
                 <div class="text-right">
                     <button id="btnRecording" class="btn"><i class="fas fa-microphone-alt fa-record-vinyl-custom"></i>
@@ -40,10 +41,12 @@
         <div class="mobile mobile-nav">
             <div id="play-song-mobile-nav" class="play-song-mobile-nav">
                 <span id="song-name-small-bar" class="pad-small-2 pad-5 hide-extra-content">Until I Met You</span>
-                <button class="pad-small-2 pad-5 btn-without-bg"><i id="rewindTrack" class="fas fa-backward color-white font-20"></i></button>
+                <button class="pad-small-2 pad-5 btn-without-bg"><i id="rewindTrack"
+                        class="fas fa-backward color-white font-20"></i></button>
                 <button id="playpausebtn-small" class="pad-small-2 btn-without-bg pad-5"><i
                         class="far fa-play-circle color-white font-20"></i></button>
-                <button class="pad-small-2 pad-5 btn-without-bg"><i id="forwardTrack" class="fas fa-forward color-white font-20"></i></button>
+                <button class="pad-small-2 pad-5 btn-without-bg"><i id="forwardTrack"
+                        class="fas fa-forward color-white font-20"></i></button>
                 <span id="showCurrentSongTimerSmall" class="pad-top-20 hide-extra-content"></span>
                 <div class="ham">
                     <button class="btn-without-bg"><i class="fas fa-search font-20"></i></button>
@@ -53,8 +56,13 @@
             </div>
             <div id="record-song-mobile-nav" class="record-song-mobile-nav hidden">
                 <span class="pad-5 hide-extra-content color-red">Recording</span>
-                <button class="pad-5 btn-without-bg"><i class="far fa-play-circle color-white font-20"></i></button>
-                <button class="pad-5 btn-without-bg"><i class="far fa-stop-circle color-white font-20"></i></button>
+                <button class="pad-top-5 btn-without-bg"><i id="start-recording-small"
+                        class="fas fa-microphone-alt color-white font-20"></i></button>
+                <button class="pad-top-5 btn-without-bg"><i id="stop-recording-small"
+                        class="far fa-stop-circle color-white font-20"></i></button>
+                <button class="pad-top-5 btn-without-bg visibility-hidden"><i id="play-recording-small"
+                        class="fas fa-play-circle color-white font-20"></i></button>
+                <span id="showCurrentRecordingTimerSmall" class="pad-top-20 hide-extra-content"></span>
                 <div class="ham">
                     <button class="btn-without-bg"><i class="fas fa-search font-20"></i></button>
                     <button class="mobile-pad-left-20 pad-left-20 btn-without-bg"><i
@@ -64,7 +72,14 @@
             <div class="hamContent hidden">
                 <div class="grid grid-cols-1 text-right">
                     <div class="pad-top-23 ">
-                        <span class="color-blue">Trending Song:</span> <button id="show-trending-song" class="btn-without-bg play-music-button" value="tenderness">Tenderness</button>
+                    <button id="btnRecordingSmall" class="btn"><i
+                            class="fas fa-microphone-alt fa-record-vinyl-custom"></i>
+                        Record Song</button>
+                    </div>
+                    <div class="border-color-blue"></div>
+                    <div>                        
+                        <span class="color-blue">Trending Song:</span> <button id="show-trending-song"
+                            class="btn-without-bg play-music-button" value="tenderness">Tenderness</button>
                     </div>
                     <div class="border-color-blue"></div>
                     <div class="border-top">
@@ -102,7 +117,8 @@
                         <h1 class="color-blue">Record Breaking Albums !</h1>
                         <p>Dream your moments, Until I Met You, Gimme Some Courage, Dark Alley, One More Of A Stranger,
                             Endless Things, The Heartbeat Stops, Walking Promises, Desired Games and many more...</p>
-                        <button id="play-trending-song" value="tenderness" class="play-music-button btn">Listen Now</button>
+                        <button id="play-trending-song" value="tenderness" class="play-music-button btn">Listen
+                            Now</button>
                     </div>
                 </div>
             </div>
@@ -351,12 +367,12 @@
                         <canvas class="pad-top-10 canvas-small"></canvas>
                     </div>
                     <div class="flex grid-span-2 background-black">
-                        <button class="pad-top-15 btn-without-bg"><i id="rewindTrack" 
-                            title="Rewind For 10 Seconds" class="fas fa-backward color-white font-20"></i></button>
+                        <button class="pad-top-15 btn-without-bg"><i id="rewindTrack" title="Rewind For 10 Seconds"
+                                class="fas fa-backward color-white font-20"></i></button>
                         <button id="playpausebtn" class="pad-top-15 btn-without-bg"><i
                                 class="far fa-play-circle color-white font-20"></i></button>
-                        <button class="pad-top-15 btn-without-bg"><i id="forwardTrack"
-                            title="Forward For 10 Seconds" class="fas fa-forward color-white font-20"></i></button>
+                        <button class="pad-top-15 btn-without-bg"><i id="forwardTrack" title="Forward For 10 Seconds"
+                                class="fas fa-forward color-white font-20"></i></button>
                         <span class="pad-top-26 pad-left-20 hideOnMobile">Track</span>
                         <input id="seekslider" class="margin-15 custom-range hideOnMobile" width="40" type="range"
                             min="0" max="100" value="0">
@@ -372,14 +388,20 @@
                 <div class="grid grid-cols-7">
                     <div class="flex text-center">
                         <span class="pad-top-26 hide-extra-content color-red">Recording</span>
+                        <span id="showCurrentRecordingTimer" class="pad-top-26 hide-extra-content"></span>
                     </div>
                     <div class="flex grid-span-recording-2 background-black">
-                        <button class="pad-top-23 btn-without-bg"><i
-                                class="fas fa-play-circle color-white font-20"></i></button>
-                        <button class="pad-top-23 btn-without-bg"><i
+                        <button class="pad-top-15 btn-without-bg"><i id="start-recording"
+                                class="fas fa-microphone-alt color-white font-20"></i></button>
+                        <button class="pad-top-15 btn-without-bg"><i id="stop-recording"
                                 class="far fa-stop-circle color-white font-20"></i></button>
-                        <input class="margin-15 custom-range hideOnMobile" width="40" type="range" value="0.01" min="0"
-                            max="5" name="" id="">
+                        <button class="pad-top-15 btn-without-bg visibility-hidden"><i id="play-recording"
+                                class="fas fa-play-circle color-white font-20"></i></button>
+                        <input id="recordingSlider" class="margin-15 custom-range hideOnMobile" width="40" type="range"
+                            min="0" max="100" value="0">
+                        <span class="pad-top-26 pad-left-20 hideOnMobile">Volume</span>
+                        <input id="volumeRecordingSlider" class="width-20 margin-15 custom-range hideOnMobile"
+                            type="range" id="vol" value="50" name="vol" min="0" max="50">
                     </div>
                 </div>
             </div>
@@ -388,8 +410,10 @@
     <footer>
         <p class="text-center">&copy; 2020. <span class="color-blue">Music Store - Nitish Kumar</span></p>
     </footer>
+    <script src="/MusicStore/source/js/initializer.js"></script>
     <script src="/MusicStore/source/js/music-list.js"></script>
     <script src="/MusicStore/source/js/main.js"></script>
+    <script src="/MusicStore/source/js/recorder.js"></script>
     <script src="/MusicStore/source/js/play-drum.js"></script>
 </body>
 
