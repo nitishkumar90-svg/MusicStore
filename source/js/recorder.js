@@ -27,7 +27,7 @@ let loadMicrophone = async function () {
             let calculatedTime = ConvertSecondsToMinutesAndSecondString(Math.floor(recordingTime))
             showCurrentRecordingTimer.innerText = showCurrentRecordingTimerSmall.innerText = calculatedTime
             recordingSlider.value = recordingTime
-        }, 1000);
+        }, 1000)
         let index = 0
         recordingNow(true)
     })
