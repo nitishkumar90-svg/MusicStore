@@ -193,6 +193,10 @@
 	visibility: hidden;
 }
 
+.font-weight-bold {
+	font-weight: bold;
+}
+
 
 /*---- END GENERAL CSS ----*/
 
@@ -219,18 +223,6 @@ header .hamContent {
 	right: 10px;
 	background-color: black;
 	width: 100%;
-}
-
-header #static-search-div {
-	position: absolute;
-    height: 250px;
-    background-color: var(--secondary-color);
-    width: auto;
-    z-index: 3;
-    top: 52px;
-    left: 10px;
-    border: 2px solid #000;
-    overflow-y: auto;
 }
 
 
