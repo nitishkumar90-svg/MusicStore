@@ -78,23 +78,8 @@ let toggleHam = () => {
     hamContent.classList.toggle('hidden')
 }
 
-let filterSongsByKeyword = (keyword) => {
-    let searchList = []
-    for (let index = 0; index < songsList.length; index++) {
-        const song = songsList[index]
-        searchList.push(song)
-    }
-    return searchList
-}
-
 let searchSong = (songId) => {
-    let songUrl
-    availableSongsList.forEach(element => {
-        if (element.id == songId) {
-            songUrl = element
-        }
-    })
-    return songUrl
+    return availableSongsList.find(element => element.id === songId)
 }
 
 let assignHTML_ToPlayButton = (toInclude) => {
@@ -217,31 +202,11 @@ let assignSongToTrendingBar = (songDetail) => {
 let shuffleAvailablePlayList = (availableSongsList) => {
     for (let i = availableSongsList.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [availableSongsList[i], availableSongsList[j]] = [availableSongsList[j], availableSongsList[i]];
+        [availableSongsList[i], availableSongsList[j]] = [availableSongsList[j], availableSongsList[i]]
     }
 }
 
 //#endregion
-
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-  }
-  
-  function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-      txtValue = a[i].textContent || a[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        a[i].style.display = "";
-      } else {
-        a[i].style.display = "none";
-      }
-    }
-  }
 
 //#region Event Handlers
 document.onreadystatechange = function (event) {

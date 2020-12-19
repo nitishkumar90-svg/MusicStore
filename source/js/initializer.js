@@ -63,7 +63,7 @@ let playTrendingSongButton = FindElementBySelector('play-trending-song', true, f
 //#endregion
 
 //#region Initialize Global Variables
-let Song_StartInterval;
+let Song_StartInterval
 let recordingTime = 0
 let audio = new Audio()
 let mediaRecorder
