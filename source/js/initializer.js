@@ -1,5 +1,5 @@
 //defaults
-
+window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
 
 //#region Find Element Method
 
@@ -50,11 +50,6 @@ let volumeRecordingSlider = FindElementBySelector('volumeRecordingSlider', true,
 let btnRecording = FindElementBySelector('btnRecording', true, false)
 let recordingSection = FindElementBySelector('recording-section', true, false)
 let playSongSection = FindElementBySelector('play-song-section', true, false)
-
-
-//Search Section
-let txtBoxSearch = FindElementBySelector('txtSearch', true, false)
-let staticSearchDiv = FindElementBySelector('static-search-div', true, false)
 
 //Navigation Bar
 let hamAnchor = FindElementBySelector('.ham', false, false)
@@ -134,13 +129,12 @@ let ToggleRecordingSectionBar = (fromPlaySong) => {
 
 
 
-let StartLiveVisualizationForUI = (audio) => {
-    try {
-        if (audio !== undefined) {
-            window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
+let StartLiveVisualizationForUI = (audiofile) => {
+        if (audiofile !== undefined) {
+            debugger
             let audioContext = new AudioContext()
             let analyser = audioContext.createAnalyser()
-            let audioSrc = audioContext.createMediaElementSource(audio)
+            let audioSrc = audioContext.createMediaElementSource(audiofile)
 
             audioSrc.connect(analyser)
             analyser.connect(audioContext.destination)
@@ -188,10 +182,6 @@ let StartLiveVisualizationForUI = (audio) => {
             }
             renderFrame()
         }
-    }
-    catch (ex) {
-        console.log(ex)
-    }
 }
 
 //#endregion

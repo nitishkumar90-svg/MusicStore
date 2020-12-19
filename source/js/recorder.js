@@ -104,6 +104,7 @@ let pauseAudio = () => {
     if (recordAudio === undefined)
         return
     recordAudio.pause()
+    recordingSlider.value = 0
 }
 
 //#endregion

@@ -136,6 +136,7 @@ let initAudioPlayer = (event) => {
     let songDetail = searchSong(songId)
     if (songDetail !== undefined) {
         audio.pause()
+        audio = new Audio()
         audio.src = songDetail.url
         audio.addEventListener('timeupdate', (event) => {
             const { currentTime } = event.target
@@ -191,7 +192,6 @@ let playPause = () => {
 //#region Initialization of content on page
 let initializeContent = () => {
     initAudioPlayer()
-    staticSearchDiv.clientWidth = txtBoxSearch.clientWidth
     setTimeout(function () { document.querySelector('.modal').remove() }, 1000)
 }
 
@@ -222,6 +222,26 @@ let shuffleAvailablePlayList = (availableSongsList) => {
 }
 
 //#endregion
+
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  function filterFunction() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("myDropdown");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+      txtValue = a[i].textContent || a[i].innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        a[i].style.display = "";
+      } else {
+        a[i].style.display = "none";
+      }
+    }
+  }
 
 //#region Event Handlers
 document.onreadystatechange = function (event) {
