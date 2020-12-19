@@ -1,61 +1,73 @@
+//defaults
+window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext
 
-let findElement = (selector, findSelectorByID) => {
+//#region Find Element Method
+
+// method which will return the current tag by selector
+let FindElementBySelector = (selector, findSelectorByID, findAllBySelector) => {
+    if (findAllBySelector !== undefined && findAllBySelector)
+        return document.querySelectorAll(selector)
     return findSelectorByID ? document.getElementById(selector) : document.querySelector(selector)
 }
 
+//#endregion
+
+//#region variables
+
 //Mobile Nav Bar
-let playSongMobileNavBar = findElement('play-song-mobile-nav', true)
-let startBtnSmall = findElement(`start-recording-small`, true)
-let songNameSmallBar = findElement('song-name-small-bar', true)
-let showCurrentSongTimerSmall = findElement('showCurrentSongTimerSmall', true)
-let playButtonSmall = findElement('playpausebtn-small', true)
+let playSongMobileNavBar = FindElementBySelector('play-song-mobile-nav', true, false)
+let startBtnSmall = FindElementBySelector(`start-recording-small`, true, false)
+let songNameSmallBar = FindElementBySelector('song-name-small-bar', true, false)
+let showCurrentSongTimerSmall = FindElementBySelector('showCurrentSongTimerSmall', true, false)
+let playButtonSmall = FindElementBySelector('playpausebtn-small', true, false)
 
 //Mobile Recording Nav Bar
-let recordSongMobileNavBar = findElement('record-song-mobile-nav', true)
-let playBtnSmall = findElement(`play-recording-small`, true)
-let stopBtnSmall = findElement(`stop-recording-small`, true)
-let btnRecordingSmall = findElement('btnRecordingSmall', true)
-let showCurrentRecordingTimerSmall = findElement('showCurrentRecordingTimerSmall', true)
+let recordSongMobileNavBar = FindElementBySelector('record-song-mobile-nav', true, false)
+let playBtnSmall = FindElementBySelector(`play-recording-small`, true, false)
+let stopBtnSmall = FindElementBySelector(`stop-recording-small`, true, false)
+let btnRecordingSmall = FindElementBySelector('btnRecordingSmall', true, false)
+let showCurrentRecordingTimerSmall = FindElementBySelector('showCurrentRecordingTimerSmall', true, false)
 
 
 //Normal Player
-let seekSlider = findElement('seekslider', true)
-let volumeSlider = findElement('volumeslider', true)
-let pauseButtons = document.querySelectorAll('.fa-pause-circle')
-let rewindTrack = document.querySelectorAll('#rewindTrack')
-let forwardTrack = document.querySelectorAll('#forwardTrack')
-let playButton = findElement('playpausebtn', true)
-let songNameBar = findElement('song-name-bar', true)
-let currentSongImage = findElement('current-song-image', true)
-let showCurrentSongTimer = findElement('showCurrentSongTimer', true)
+let seekSlider = FindElementBySelector('seekslider', true, false)
+let volumeSlider = FindElementBySelector('volumeslider', true, false)
+let pauseButtons = FindElementBySelector('.fa-pause-circle', false, true)
+let rewindTrack = FindElementBySelector('#rewindTrack', false, true)
+let forwardTrack = FindElementBySelector('#forwardTrack', false, true)
+let playButton = FindElementBySelector('playpausebtn', true, false)
+let songNameBar = FindElementBySelector('song-name-bar', true, false)
+let currentSongImage = FindElementBySelector('current-song-image', true, false)
+let showCurrentSongTimer = FindElementBySelector('showCurrentSongTimer', true, false)
 
 //Normal Recording Player
-let startBtn = findElement(`start-recording`, true)
-let playBtn = findElement(`play-recording`, true)
-let stopBtn = findElement(`stop-recording`, true)
-let recordingSlider = findElement('recordingSlider', true)
-let showCurrentRecordingTimer = findElement('showCurrentRecordingTimer', true)
-let volumeRecordingSlider = findElement('volumeRecordingSlider', true)
-let btnRecording = findElement('btnRecording', true)
-let recordingSection = findElement('recording-section', true)
-let playSongSection = findElement('play-song-section', true)
+let startBtn = FindElementBySelector(`start-recording`, true, false)
+let playBtn = FindElementBySelector(`play-recording`, true, false)
+let stopBtn = FindElementBySelector(`stop-recording`, true, false)
+let recordingSlider = FindElementBySelector('recordingSlider', true, false)
+let showCurrentRecordingTimer = FindElementBySelector('showCurrentRecordingTimer', true, false)
+let volumeRecordingSlider = FindElementBySelector('volumeRecordingSlider', true, false)
+let btnRecording = FindElementBySelector('btnRecording', true, false)
+let recordingSection = FindElementBySelector('recording-section', true, false)
+let playSongSection = FindElementBySelector('play-song-section', true, false)
 
 
 //Search Section
-let txtBoxSearch = findElement('txtSearch', true)
-let staticSearchDiv = findElement('static-search-div', true)
+let txtBoxSearch = FindElementBySelector('txtSearch', true, false)
+let staticSearchDiv = FindElementBySelector('static-search-div', true, false)
 
 //Navigation Bar
-let hamAnchor = findElement('.ham', false)
-let hamContent = findElement('.hamContent', false)
+let hamAnchor = FindElementBySelector('.ham', false, false)
+let hamContent = FindElementBySelector('.hamContent', false, false)
 
 //Initialize Current Song List and Trending Song
 
-let songsList = document.querySelectorAll('.play-music-button')
-let showTrendingSong = document.querySelectorAll('#show-trending-song')
-let playTrendingSongButton = findElement('play-trending-song', true)
+let songsList = FindElementBySelector('.play-music-button', false, true)
+let showTrendingSong = FindElementBySelector('#show-trending-song', false, true)
+let playTrendingSongButton = FindElementBySelector('play-trending-song', true, false)
+//#endregion
 
-//Initialize Global Variables
+//#region Initialize Global Variables
 let songStartInterval;
 let recordingTime = 0
 let audio = new Audio()
@@ -63,9 +75,10 @@ let mediaRecorder
 let classList = []
 let isFirstSong = true
 const trackTime = 5
+//#endregion
 
-
-let dynamicElement = (tagName, classList) => {
+//#region Global Functions
+let CreateDynamicElementByTagNameAndClasses = (tagName, classList) => {
     let tagElement = document.createElement(tagName)
     for (let index = 0; index < classList.length; index++) {
         tagElement.classList.add(classList[index])
@@ -73,7 +86,7 @@ let dynamicElement = (tagName, classList) => {
     return tagElement
 }
 
-let resetRecorder = () => {
+let ResetRecorderSettings = (forceReset) => {
     playBtn.parentElement.classList.add('visibility-hidden')
     playBtnSmall.parentElement.classList.add('visibility-hidden')
     showCurrentRecordingTimer.innerText = showCurrentRecordingTimerSmall.innerText = ''
@@ -83,27 +96,45 @@ let resetRecorder = () => {
     stopBtn.classList.remove('fa-pause-circle')
     stopBtnSmall.classList.add('fa-stop-circle')
     stopBtnSmall.classList.remove('fa-pause-circle')
+    try {
+        if (forceReset) {
+            mediaRecorder.stop()
+            audio.pause()
+        }
+    }
+    catch (ex) { }
 }
 
 
-let convertSecondstoTime = (seconds) => {
+let ConvertSecondsToMinutesAndSecondString = (seconds) => {
     let currentDateTime = new Date(seconds * 1000)
     return currentDateTime.getUTCMinutes().toString().padStart(2, '0')
         + ':'
         + currentDateTime.getUTCSeconds().toString().padStart(2, '0')
 }
 
-let toggleRecordingSection = () => {
-    playSongMobileNavBar.classList.toggle('hidden')
-    recordSongMobileNavBar.classList.toggle('hidden')
+let ToggleRecordingSectionBar = (fromPlaySong) => {
+    if (fromPlaySong != true) {
+        playSongMobileNavBar.classList.toggle('hidden')
+        recordSongMobileNavBar.classList.toggle('hidden')
 
-    recordingSection.classList.toggle('hidden')
-    playSongSection.classList.toggle('hidden')
+        recordingSection.classList.toggle('hidden')
+        playSongSection.classList.toggle('hidden')
+    }
+    else {
+        console.log(fromPlaySong)
+        playSongMobileNavBar.classList.remove('hidden')
+        playSongSection.classList.remove('hidden')
+
+        recordSongMobileNavBar.classList.add('hidden')
+        recordingSection.classList.add('hidden')
+        
+    }
 }
 
 
 
-let startVisualization = (audio) => {
+let StartLiveVisualizationForUI = (audio) => {
     try {
         if (audio !== undefined) {
             let audioContext = new AudioContext()
@@ -161,3 +192,5 @@ let startVisualization = (audio) => {
         console.log(ex)
     }
 }
+
+//#endregion
