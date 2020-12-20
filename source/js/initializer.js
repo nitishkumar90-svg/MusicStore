@@ -133,7 +133,6 @@ let ToggleRecordingSectionBar = (fromPlaySong) => {
 
 let StartLiveVisualizationForUI = (audiofile) => {
         if (audiofile !== undefined) {
-            debugger
             let audioContext = new AudioContext()
             let analyser = audioContext.createAnalyser()
             let audioSrc = audioContext.createMediaElementSource(audiofile)

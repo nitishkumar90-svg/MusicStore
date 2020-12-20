@@ -21,7 +21,16 @@ let playBeatByKey = (event) => {
     playBeatAudio(beatDetail.url)
 }
 
+let resetPreviousAudio = () => {
+    if (audio !== undefined) {
+        audio.pause()
+        ResetRecorderSettings(true)
+        assignHTML_ToPlayButton(true)
+    }
+}
+
 let playBeatAudio = (url) => {
+    resetPreviousAudio()
     let audio = new Audio(url)
     audio.play()
     StartLiveVisualizationForUI(audio)
