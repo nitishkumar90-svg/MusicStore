@@ -122,7 +122,7 @@ startBtn.addEventListener(`click`, function (event) {
     if (MediaRcdr === undefined)
         return
     try {
-        MediaRecorder.start()
+        MediaRcdr.start()
     }
     catch (ex) { console.log(ex) }
 })
