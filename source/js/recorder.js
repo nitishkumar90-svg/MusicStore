@@ -112,7 +112,7 @@ let pauseAudio = () => {
 //#region Start/ Pause Button
 
 // When the start button is clicked, start recording
-startBtn.addEventListener(`click`, function (event) {
+startBtn.addEventListener('click', function (event) {
     if (mediaRecorder === undefined)
         return
     try {
@@ -121,7 +121,7 @@ startBtn.addEventListener(`click`, function (event) {
     catch (ex) { console.log(ex) }
 })
 // When the start button is clicked, start recording
-startBtnSmall.addEventListener(`click`, function (event) {
+startBtnSmall.addEventListener('click', function (event) {
     if (mediaRecorder === undefined)
         return
     try {
@@ -131,7 +131,7 @@ startBtnSmall.addEventListener(`click`, function (event) {
 })
 
 // When the stop button is clicked, stop recording
-stopBtn.addEventListener(`click`, function (event) {
+stopBtn.addEventListener('click', function (event) {
     if (recordAudio !== undefined)
         recordAudio.pause()
     if (mediaRecorder === undefined)
@@ -143,7 +143,7 @@ stopBtn.addEventListener(`click`, function (event) {
 })
 
 // When the stop button is clicked, stop recording
-stopBtnSmall.addEventListener(`click`, function (event) {
+stopBtnSmall.addEventListener('click', function (event) {
     if (recordAudio !== undefined)
         recordAudio.pause()
     if (mediaRecorder === undefined)
@@ -164,7 +164,7 @@ playBtn.addEventListener('click', playSong)
 playBtnSmall.addEventListener('click', playSong)
 
 // When the window is loaded and ready to go, get the Microphone ready
-window.addEventListener(`load`, loadMicrophone)
+window.addEventListener('load', loadMicrophone)
 //#endregion
 
 

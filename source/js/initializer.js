@@ -16,15 +16,15 @@ let FindElementBySelector = (selector, findSelectorByID, findAllBySelector) => {
 
 //Mobile Nav Bar
 let playSongMobileNavBar = FindElementBySelector('play-song-mobile-nav', true, false)
-let startBtnSmall = FindElementBySelector(`start-recording-small`, true, false)
+let startBtnSmall = FindElementBySelector('start-recording-small', true, false)
 let songNameSmallBar = FindElementBySelector('song-name-small-bar', true, false)
 let showCurrentSongTimerSmall = FindElementBySelector('showCurrentSongTimerSmall', true, false)
 let playButtonSmall = FindElementBySelector('playpausebtn-small', true, false)
 
 //Mobile Recording Nav Bar
 let recordSongMobileNavBar = FindElementBySelector('record-song-mobile-nav', true, false)
-let playBtnSmall = FindElementBySelector(`play-recording-small`, true, false)
-let stopBtnSmall = FindElementBySelector(`stop-recording-small`, true, false)
+let playBtnSmall = FindElementBySelector('play-recording-small', true, false)
+let stopBtnSmall = FindElementBySelector('stop-recording-small', true, false)
 let btnRecordingSmall = FindElementBySelector('btnRecordingSmall', true, false)
 let showCurrentRecordingTimerSmall = FindElementBySelector('showCurrentRecordingTimerSmall', true, false)
 
@@ -41,9 +41,9 @@ let currentSongImage = FindElementBySelector('current-song-image', true, false)
 let showCurrentSongTimer = FindElementBySelector('showCurrentSongTimer', true, false)
 
 //Normal Recording Player
-let startBtn = FindElementBySelector(`start-recording`, true, false)
-let playBtn = FindElementBySelector(`play-recording`, true, false)
-let stopBtn = FindElementBySelector(`stop-recording`, true, false)
+let startBtn = FindElementBySelector('start-recording', true, false)
+let playBtn = FindElementBySelector('play-recording', true, false)
+let stopBtn = FindElementBySelector('stop-recording', true, false)
 let recordingSlider = FindElementBySelector('recordingSlider', true, false)
 let showCurrentRecordingTimer = FindElementBySelector('showCurrentRecordingTimer', true, false)
 let volumeRecordingSlider = FindElementBySelector('volumeRecordingSlider', true, false)
@@ -127,11 +127,12 @@ let ToggleRecordingSectionBar = (fromPlaySong) => {
 
         recordSongMobileNavBar.classList.add('hidden')
         recordingSection.classList.add('hidden')
-        
+
     }
 }
 
 let StartLiveVisualizationForUI = (audiofile) => {
+    try {
         if (audiofile !== undefined) {
             let audioContext = new AudioContext()
             let analyser = audioContext.createAnalyser()
@@ -140,49 +141,50 @@ let StartLiveVisualizationForUI = (audiofile) => {
             audioSrc.connect(analyser)
             analyser.connect(audioContext.destination)
 
-            let frequencyData = new Uint8Array(analyser.frequencyBinCount)
-
+            let primaryColorForMyWebsite = '#3BC8E7'
+            let secondaryColorForMyWebsite = '#FFFFFF'
             let canvas = document.querySelector('.canvas'),
-                cwidth = canvas.width,
-                cheight = canvas.height - 2,
-                meterWidth = 10,
-                gap = 2,
-                capHeight = 4,
-                capStyle = '#3BC8E7',
-                meterNum = 800 / (10 + 2),
-                capYPositionArray = []
+                canvasWidth = canvas.width,
+                canvasHeight = canvas.height - 2,
+                meterWidth = 12,
+                capHeight = 6,
+                capStyle = primaryColorForMyWebsite,
+                meterNum = 800 / (12 + 2),
+                positionYArray = []
 
             audioContext = canvas.getContext('2d'),
                 gradient = audioContext.createLinearGradient(0, 0, 0, 300)
-            gradient.addColorStop(1, '#ffffff')
-            gradient.addColorStop(0.5, '#3BC8E7')
-            gradient.addColorStop(0, '#3BC8E7')
+            gradient.addColorStop(1, secondaryColorForMyWebsite)
+            gradient.addColorStop(0.5, primaryColorForMyWebsite)
+            gradient.addColorStop(0, secondaryColorForMyWebsite)
 
             let renderFrame = () => {
-                let array = new Uint8Array(analyser.frequencyBinCount)
-                analyser.getByteFrequencyData(array)
-                let step = Math.round(array.length / meterNum) //sample limited data from the total array
-                audioContext.clearRect(0, 0, cwidth, cheight)
+                let int8Array = new Uint8Array(analyser.frequencyBinCount)
+                analyser.getByteFrequencyData(int8Array)
+                let step = Math.round(int8Array.length / meterNum)
+                audioContext.clearRect(0, 0, canvasWidth, canvasHeight)
                 for (let i = 0; i < meterNum; i++) {
-                    let value = array[i * step]
-                    if (capYPositionArray.length < Math.round(meterNum)) {
-                        capYPositionArray.push(value)
+                    let value = int8Array[i * step]
+                    if (positionYArray.length < Math.round(meterNum)) {
+                        positionYArray.push(value)
                     }
                     audioContext.fillStyle = capStyle
 
-                    if (value < capYPositionArray[i]) {
-                        audioContext.fillRect(i * 12, cheight - (--capYPositionArray[i]), meterWidth, capHeight)
+                    if (value < positionYArray[i]) {
+                        audioContext.fillRect(i * 12, canvasHeight - (--positionYArray[i]), meterWidth, capHeight)
                     } else {
-                        audioContext.fillRect(i * 12, cheight - value, meterWidth, capHeight)
-                        capYPositionArray[i] = value
+                        audioContext.fillRect(i * 12, canvasHeight - value, meterWidth, capHeight)
+                        positionYArray[i] = value
                     }
                     audioContext.fillStyle = gradient
-                    audioContext.fillRect(i * 12, cheight - value + capHeight, meterWidth, cheight)
+                    audioContext.fillRect(i * 12, canvasHeight - value + capHeight, meterWidth, canvasHeight)
                 }
                 requestAnimationFrame(renderFrame)
             }
             renderFrame()
         }
+    }
+    catch (ex) { console.log(ex) }
 }
 
 //#endregion
