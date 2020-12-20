@@ -1,3 +1,12 @@
+## Name
+Nitish Kumar
+
+## Student ID
+N01439396
+
+## Project Submitted To:
+Rocco Panacci, Jesse Mykolyn
+
 ## Table of contents
 * [General info](#general-info)
 * [Live Visualization](#live-visualization)
