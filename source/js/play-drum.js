@@ -40,7 +40,7 @@ let showAlertForDrumIcons = () => {
     let alertHtml = ''
     let oneLineSpace = '\n'
     for (let index = 0; index < drumBeatsList.length; index++) {
-        alertHtml += 'Shift + ' + drumBeatsList[index].key + ' - ' + drumBeatsList[index].id + oneLineSpace
+        alertHtml += 'Shift + ' + drumBeatsList[index].key.toLowerCase() + ' - ' + drumBeatsList[index].id + oneLineSpace
     }
     alert('You can also use following keyboard keys to play drum beats.' + oneLineSpace + alertHtml)
 }
