@@ -1,68 +1,69 @@
 //#region Generic HTML Generator
+
 //This function will create <i> tag for player
 let createItemElementForMusic = (addPlayIcon) => {
-    classList.splice(0, classList.length)
-    classList.push('far')
-    classList.push((addPlayIcon ? 'fa-play-circle' : 'fa-pause-circle'))
-    classList.push('color-white')
-    classList.push('font-20')
-    let iconElement = CreateDynamicElementByTagNameAndClasses('i', classList)
-    iconElement.setAttribute('title', (addPlayIcon ? 'Play' : 'Pause'))
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`far`)
+    ClassList.push((addPlayIcon ? `fa-play-circle` : `fa-pause-circle`))
+    ClassList.push(`color-white`)
+    ClassList.push(`font-20`)
+    let iconElement = CreateDynamicElementByTagNameAndClasses(`i`, ClassList)
+    iconElement.setAttribute(`title`, (addPlayIcon ? `Play` : `Pause`))
     return iconElement
 }
 
 //This function will create generic HTML tag for Weekly Top 9 Section
 let createElementWithContent = (serialNumber, songDetail) => {
     //div element 
-    classList.splice(0, classList.length)
-    classList.push('flex')
-    let parentElement = CreateDynamicElementByTagNameAndClasses('div', classList)
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`flex`)
+    let parentElement = CreateDynamicElementByTagNameAndClasses(`div`, ClassList)
 
     //span element
-    classList.splice(0, classList.length)
-    classList.push('font-40')
-    classList.push('pad-top-10')
-    let element = CreateDynamicElementByTagNameAndClasses('span', classList)
-    element.innerText = '0' + serialNumber
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`font-40`)
+    ClassList.push(`pad-top-10`)
+    let element = CreateDynamicElementByTagNameAndClasses(`span`, ClassList)
+    element.innerText = `0` + serialNumber
     parentElement.append(element)
 
     //image element
-    classList.splice(0, classList.length)
-    element = CreateDynamicElementByTagNameAndClasses('img', classList)
-    element.setAttribute('src', songDetail.imageUrl)
-    element.setAttribute('height', '50')
+    ClassList.splice(0, ClassList.length)
+    element = CreateDynamicElementByTagNameAndClasses(`img`, ClassList)
+    element.setAttribute(`src`, songDetail.imageUrl)
+    element.setAttribute(`height`, `50`)
     parentElement.append(element)
 
     //span element
-    classList.splice(0, classList.length)
-    classList.push('fixed-width-150')
-    classList.push('pad-top-20')
-    element = CreateDynamicElementByTagNameAndClasses('span', classList)
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`fixed-width-150`)
+    ClassList.push(`pad-top-20`)
+    element = CreateDynamicElementByTagNameAndClasses(`span`, ClassList)
     element.innerText = songDetail.name
     parentElement.append(element)
 
     //span element
-    classList.splice(0, classList.length)
-    classList.push('pad-top-20')
-    element = CreateDynamicElementByTagNameAndClasses('span', classList)
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`pad-top-20`)
+    element = CreateDynamicElementByTagNameAndClasses(`span`, ClassList)
     element.innerText = ConvertSecondsToMinutesAndSecondString(songDetail.max)
     parentElement.append(element)
 
     //font awesome element
-    classList.splice(0, classList.length)
-    classList.push('far')
-    classList.push('fa-play-circle')
-    classList.push('color-white')
-    classList.push('font-20')
-    let iconElement = CreateDynamicElementByTagNameAndClasses('i', classList)
-    iconElement.setAttribute('title', songDetail.id)
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`far`)
+    ClassList.push(`fa-play-circle`)
+    ClassList.push(`color-white`)
+    ClassList.push(`font-20`)
+    let iconElement = CreateDynamicElementByTagNameAndClasses(`i`, ClassList)
+    iconElement.setAttribute(`title`, songDetail.id)
 
     //button element
-    classList.splice(0, classList.length)
-    classList.push('play-music-button')
-    classList.push('btn-without-bg')
-    classList.push('pad-top-3')
-    element = CreateDynamicElementByTagNameAndClasses('button', classList)
+    ClassList.splice(0, ClassList.length)
+    ClassList.push(`play-music-button`)
+    ClassList.push(`btn-without-bg`)
+    ClassList.push(`pad-top-3`)
+    element = CreateDynamicElementByTagNameAndClasses(`button`, ClassList)
     element.append(iconElement)
     parentElement.append(element)
 
@@ -75,39 +76,48 @@ let createElementWithContent = (serialNumber, songDetail) => {
 //#region functions
 //This function will toggle Hamburger menu
 let toggleHam = () => {
-    hamContent.classList.toggle('hidden')
+    hamContent.classList.toggle(`hidden`)
 }
 
+//This function will be used to find song from available songs list in music-list.js file
 let searchSong = (songId) => {
     return availableSongsList.find(element => element.id === songId)
 }
 
-let assignHTML_ToPlayButton = (toInclude) => {
-    playButtonSmall.innerHTML = ''
-    playButtonSmall.append(createItemElementForMusic(toInclude))
-    playButton.innerHTML = ''
-    playButton.append(createItemElementForMusic(toInclude))
+
+//This function will change the inner html of play button
+//If song is in progress, user will see pause button
+// else if song is in pause state, user will see play button
+let togglePlayPauseButtonUI = (toShowPlayButton) => {
+    playButtonSmall.innerHTML = ``
+    playButtonSmall.append(createItemElementForMusic(toShowPlayButton))
+    playButton.innerHTML = ``
+    playButton.append(createItemElementForMusic(toShowPlayButton))
 
 }
 //#endregion
 
 //#region Player
+
+//This function will set the current volume of song played
 let setvolume = (event) => {
     audio.volume = volumeSlider.value / 100
 }
 
+//This function is used to reset the current audio and also reset the timee for it.
 let resetAudioPlayer = () => {
     seekSlider.value = 0
-    showCurrentSongTimer.innerText = showCurrentSongTimerSmall.innerText = ''
+    showCurrentSongTimer.innerText = showCurrentSongTimerSmall.innerText = ``
 }
 
+//This function will initialize the player and set the audio into it to play
 let initAudioPlayer = (event) => {
     var autoPlay = false
     let songId
     if (event === undefined)
-        songId = 'tenderness'
+        songId = `tenderness`
     else {
-        if (!event.target.hasAttribute('title')) {
+        if (!event.target.hasAttribute(`title`)) {
             songId = event.target.value
         }
         else {
@@ -123,7 +133,7 @@ let initAudioPlayer = (event) => {
         audio.pause()
         audio = new Audio()
         audio.src = songDetail.url
-        audio.addEventListener('timeupdate', (event) => {
+        audio.addEventListener(`timeupdate`, (event) => {
             const { currentTime } = event.target
             seekSlider.value = currentTime
             let calculatedTime = ConvertSecondsToMinutesAndSecondString(Math.floor(currentTime))
@@ -142,34 +152,41 @@ let initAudioPlayer = (event) => {
     }
 }
 
+//this function will rewind the current audio by 5 seconds
+// TrackTime is set to 5s in initializer.js
 let rewindCurrentTrack = () => {
-    audio.currentTime -= trackTime
+    audio.currentTime -= TrackTime
 }
 
+//this function will forward the current audio by 5 seconds
+// TrackTime is set to 5s in initializer.js
 let forwardCurrentTrack = () => {
-    audio.currentTime += trackTime
+    audio.currentTime += TrackTime
 }
 
 
+//this function will be used to assign the values from audio to player bar
 let assignValuesToPlayer = (songDetail, toStartMusic) => {
     songNameBar.innerText = songDetail.name
     songNameSmallBar.innerText = songDetail.name
     songNameSmallBar.innerText = songDetail.name
     if (toStartMusic)
-        assignHTML_ToPlayButton(false)
+        togglePlayPauseButtonUI(false)
     currentSongImage.src = songDetail.imageUrl
 }
+
+//This function will be used to toggle between play and pause for audio track
 let playPause = () => {
     if (audio.paused) {
-        if (isFirstSong) {
+        if (IsFirstSong) {
             StartLiveVisualizationForUI(audio)
-            isFirstSong = false
+            IsFirstSong = false
         }
         audio.play()
-        assignHTML_ToPlayButton(false)
+        togglePlayPauseButtonUI(false)
     } else {
         audio.pause()
-        assignHTML_ToPlayButton(true)
+        togglePlayPauseButtonUI(true)
     }
 }
 //#endregion
@@ -177,7 +194,7 @@ let playPause = () => {
 //#region Initialization of content on page
 let initializeContent = () => {
     initAudioPlayer()
-    setTimeout(function () { document.querySelector('.modal').remove() }, 5000)
+    setTimeout(function () { document.querySelector(`.modal`).remove() }, 5000)
 }
 
 //This function will load weekly 9 songs on window load
@@ -187,18 +204,20 @@ let loadWeeklySongs = (numberOfSongs) => {
     for (let index = 0; index < numberOfSongs; index++) {
         if (index === 0)
             assignSongToTrendingBar(availableSongsList[index])
-        FindElementBySelector('weekly-top-9-content', true).append(createElementWithContent((index + 1), availableSongsList[index]))
+        FindElementBySelector(`weekly-top-9-content`, true).append(createElementWithContent((index + 1), availableSongsList[index]))
     }
 }
 
+//This will assign current trending song to header section
 let assignSongToTrendingBar = (songDetail) => {
     showTrendingSong.forEach(trend => {
-        trend.setAttribute('value', songDetail.id)
+        trend.setAttribute(`value`, songDetail.id)
         trend.innerText = songDetail.name
     })
-    playTrendingSongButton.setAttribute('value', songDetail.id)
+    playTrendingSongButton.setAttribute(`value`, songDetail.id)
 }
 
+//This function is used to shuffle the current available playlist
 let shuffleAvailablePlayList = (availableSongsList) => {
     for (let i = availableSongsList.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -210,19 +229,19 @@ let shuffleAvailablePlayList = (availableSongsList) => {
 
 //#region Event Handlers
 document.onreadystatechange = function (event) {
-    if (document.readyState === 'complete')
+    if (document.readyState === `complete`)
         loadWeeklySongs(9)
 }
 window.onload = function (event) {
-
-    songsList = document.querySelectorAll('.play-music-button')
-    songsList.forEach(element => { element.addEventListener('click', initAudioPlayer) })
-    hamAnchor.addEventListener('click', toggleHam)
-    playButton.addEventListener('click', playPause)
-    playButtonSmall.addEventListener('click', playPause)
-    volumeSlider.addEventListener('change', setvolume)
-    rewindTrack.forEach(element => { element.addEventListener('click', rewindCurrentTrack) })
-    forwardTrack.forEach(element => { element.addEventListener('click', forwardCurrentTrack) })
+    songsList = document.querySelectorAll(`.play-music-button`)
+    songsList.forEach(element => { element.addEventListener(`click`, initAudioPlayer) })
+    hamAnchor.addEventListener(`click`, toggleHam)
+    hamAllAnchors.forEach(element => { element.addEventListener(`click`, toggleHam) })
+    playButton.addEventListener(`click`, playPause)
+    playButtonSmall.addEventListener(`click`, playPause)
+    volumeSlider.addEventListener(`change`, setvolume)
+    rewindTrack.forEach(element => { element.addEventListener(`click`, rewindCurrentTrack) })
+    forwardTrack.forEach(element => { element.addEventListener(`click`, forwardCurrentTrack) })
     initializeContent()
 }
 //#endregion

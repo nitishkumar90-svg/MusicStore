@@ -25,7 +25,7 @@ let resetPreviousAudio = () => {
     if (audio !== undefined) {
         audio.pause()
         ResetRecorderSettings(true)
-        assignHTML_ToPlayButton(true)
+        togglePlayPauseButtonUI(true)
     }
 }
 
