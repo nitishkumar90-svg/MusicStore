@@ -385,10 +385,23 @@ header .hamContent {
 	width: 20%;
 }
 
-.static-play-section .margin-15 {
-	margin-top: 15px;
+.static-play-section .margin-20 {
+	margin-top: 20px;
 }
 
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background: var(--background-color);
+	height: 5px;
+	border: 1px solid var(--secondary-color);
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: var(--secondary-color);
+    height: 35px;
+    width: 15px;
+}
 /*---- END STATIC PLAY SECTION ----*/
 
 
