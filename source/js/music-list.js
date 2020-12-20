@@ -1,48 +1,58 @@
-//drum beat list
+//#region drum beat list
 let drumBeatsList = [
     {
         "id": "crash",
         "name": "crash.wav",
+        "key": "Z",
         "url": "/MusicStore/source/resources/audio/drum/crash.wav"
     },
     {
         "id": "kick",
         "name": "kick.wav",
+        "key": "A",
         "url": "/MusicStore/source/resources/audio/drum/kick.wav"
     },
     {
         "id": "snare",
         "name": "snare.wav",
+        "key": "B",
         "url": "/MusicStore/source/resources/audio/drum/snare.wav"
     },
     {
         "id": "tom1",
         "name": "tom.wav",
+        "key": "C",
         "url": "/MusicStore/source/resources/audio/drum/tom1.wav"
     },
     {
         "id": "tom2",
         "name": "tom.wav",
+        "key": "D",
         "url": "/MusicStore/source/resources/audio/drum/tom2.wav"
     },
     {
         "id": "tom3",
         "name": "tom.wav",
+        "key": "E",
         "url": "/MusicStore/source/resources/audio/drum/tom3.wav"
     },
     {
         "id": "highhatOpen",
         "name": "highhat.wav",
+        "key": "F",
         "url": "/MusicStore/source/resources/audio/drum/highhat-open.wav"
     },
     {
         "id": "highhatClosed",
         "name": "highhat.wav",
+        "key": "G",
         "url": "/MusicStore/source/resources/audio/drum/highhat-closed.wav"
     }
 ]
 
-//songs list
+//#endregion
+
+//#region songs list
 let availableSongsList = [
     {
         "id": "betterdays",
@@ -117,3 +127,5 @@ let availableSongsList = [
         "max": "301" // in seconds
     }
 ]
+
+//#endregion

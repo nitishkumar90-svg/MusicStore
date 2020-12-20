@@ -55,6 +55,10 @@ let playSongSection = FindElementBySelector('play-song-section', true, false)
 let hamAnchor = FindElementBySelector('.ham', false, false)
 let hamContent = FindElementBySelector('.hamContent', false, false)
 
+//Drum 
+let allActiveDrumBeats = FindElementBySelector('.opacity-0-3', false, true)
+let drumInfo = FindElementBySelector('drum-info', true, false)
+
 //Initialize Current Song List and Trending Song
 
 let songsList = FindElementBySelector('.play-music-button', false, true)
@@ -126,8 +130,6 @@ let ToggleRecordingSectionBar = (fromPlaySong) => {
         
     }
 }
-
-
 
 let StartLiveVisualizationForUI = (audiofile) => {
         if (audiofile !== undefined) {

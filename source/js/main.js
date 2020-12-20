@@ -177,7 +177,7 @@ let playPause = () => {
 //#region Initialization of content on page
 let initializeContent = () => {
     initAudioPlayer()
-    setTimeout(function () { document.querySelector('.modal').remove() }, 1000)
+    setTimeout(function () { document.querySelector('.modal').remove() }, 5000)
 }
 
 //This function will load weekly 9 songs on window load
