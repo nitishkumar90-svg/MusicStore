@@ -209,6 +209,7 @@
 header {
 	padding: 10px 10px;
 	background-color: #1B2039;
+	z-index: 6;
 }
 
 header .fa-search-custom {

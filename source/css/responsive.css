@@ -124,7 +124,36 @@
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@media (min-width: 576px) and (max-width: 767.98px) {
+
+	.grid-cols-4,
+	.weekly-top-10 .grid-cols-3 {
+		grid-template-columns: repeat(2, var(--grid-fraction));
+	}
+	.flex {
+		column-gap: 20px;
+	}
+	.caption {
+		padding-bottom: 20px;
+	}
+	.main-banner .content-div {
+		padding-top: 10vh;
+	}
+	.main-banner {
+		min-height: auto;
+	}
+	.section-advertisement {
+		padding: 0;
+		margin-bottom: 0;
+	}
+	.dj-mix-section {
+		margin-right: 10px;
+	}
+
+	.fixed-width-150 {
+		width: 120px;
+	}
+}
 
 
 /* Medium devices (tablets, 768px and up) */
