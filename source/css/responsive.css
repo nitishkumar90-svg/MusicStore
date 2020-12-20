@@ -157,6 +157,10 @@
 	.main-banner .content-div h1 {
 		font-size: 30px;
 	}
+	
+	.static-play-section {
+	    padding-bottom: 10px;
+	}
 }
 
 
@@ -189,6 +193,10 @@
 
 	.fixed-width-150 {
 		width: 120px;
+	}
+
+	.static-play-section {
+	    padding-bottom: 10px;
 	}
 }
 
