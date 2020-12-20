@@ -31,12 +31,12 @@ I have included below fun options for user to play with.
 1. **Play - Live Drum**
    For user convenience, i have given 2 option to user to play live drum.
     - By clicking on the component.
-    - By pressing key boards key that are listed when user press on info icon next to Live drum section heading. Below is the image for reference.
+    - By pressing key board keys that are listed on info icon next to Live drum section heading. Below is the image for reference.
 ![Keyboard_Option.png](https://github.com/nitishkumar90-svg/MusicStore/blob/production/source/resources/images/Website_Screenshots/Website_Image_Play_Drum_Keyboard_Options.png?raw=true)
 
 
 2. **Play Music**
-   User can play/ pause any music that is listed in my webite. Also, User has option to rewind/ forward the music by 5 seconds and can control the music volume by using the volume bar.
+   User can play any available music that is listed on this webite. Also, User has option to rewind/ forward the track by 5 seconds and can control the music volume by using the volume bar.
 
 3. **Record Voice**
-   By clicking on Record Music button on top, User can click on microphone icon to start recording his/ her voice and can play the recorded voice after stop recording button.
+   By clicking on Record Music button on top, User can click on microphone icon to start recording his/ her voice and can play the recorded voice after stop recording button. Also, user can control the volume of playback.
