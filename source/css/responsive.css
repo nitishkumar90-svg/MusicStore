@@ -131,7 +131,7 @@
 		grid-template-columns: repeat(2, var(--grid-fraction));
 	}
 	.flex {
-		column-gap: 20px;
+		column-gap: 5px;
 	}
 	.caption {
 		padding-bottom: 20px;
@@ -152,6 +152,10 @@
 
 	.fixed-width-150 {
 		width: 120px;
+	}
+
+	.main-banner .content-div h1 {
+		font-size: 30px;
 	}
 }
 
