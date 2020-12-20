@@ -6,26 +6,37 @@
 * [About music store](#about-music-store)
 
 ## General info
-This is my final project for WDDM - 114. This project is basically designed to provide an opportunity to explore the foundations of event-driven interactive interfaces, through a medium (audio) that's become as important as ever as we move our work, learning, and life, online.
+This is my final project for **Applied Web Design - WDDM-114-RNA** AND **Tools and Workflow for the Web - WDDM-115-RNA**.
+In this Project, i have added 3 functionalies for User (that are listed in [About music store](#about-music-store)) and also added [Live Visualization](#live-visualization) which will only work on playback.
+
+**Weekly top 9 list** is shuffled every time when user try to refresh the web site.
 
 Below is my website image
-
-![Website_Image.png](https://github.com/nitishkumar90-svg/MusicStore/blob/production/Website_Image.png?raw=true)
+![Website_Image.png](https://github.com/nitishkumar90-svg/MusicStore/blob/production/source/resources/images/Website_Screenshots/Website_Image.png?raw=true)
 
 ## Live Visualization
-![Visualization_Image.png](https://github.com/nitishkumar90-svg/MusicStore/blob/production/Website_Image_LiveVisualization.png?raw=true)
+![Visualization_Image.png](https://github.com/nitishkumar90-svg/MusicStore/blob/production/source/resources/images/Website_Screenshots/Website_Image_LiveVisualization.png?raw=true)
 
 ## Audio Files
-For this project, i have used royality free music just for fun.
+For this project, i have used **royality free music** just for fun.
 	
 ## Technologies
-Project is created with:
+Project is created by using below technologies:
 * HTML5
 * CSS3
 * JavaScript
 
 ## About music store
-We have 3 fun option for website
-1. Play - Live Drum
-2. Play Music
-3. Record Voice
+I have included below fun options for user to play with.
+1. **Play - Live Drum**
+   For user convenience, i have given 2 option to user to play live drum.
+    - By clicking on the component.
+    - By pressing key boards key that are listed when user press on info icon next to Live drum section heading. Below is the image for reference.
+![Keyboard_Option.png](https://github.com/nitishkumar90-svg/MusicStore/blob/production/source/resources/images/Website_Screenshots/Website_Image_Play_Drum_Keyboard_Options.png?raw=true)
+
+
+2. **Play Music**
+   User can play/ pause any music that is listed in my webite. Also, User has option to rewind/ forward the music by 5 seconds and can control the music volume by using the volume bar.
+
+3. **Record Voice**
+   By clicking on Record Music button on top, User can click on microphone icon to start recording his/ her voice and can play the recorded voice after stop recording button.
