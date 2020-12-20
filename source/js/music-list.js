@@ -34,7 +34,7 @@ let drumBeatsList = [
         "id": `tom3`,
         "name": `tom.wav`,
         "key": `E`,
-        "url": `${audioDirectory}/audio/drum/tom3.wav`
+        "url": `${audioDirectory}/drum/tom3.wav`
     },
     {
         "id": `highhatOpen`,
